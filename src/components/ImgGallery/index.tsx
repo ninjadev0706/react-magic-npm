@@ -14,6 +14,7 @@ const config = { mass: 2, tension: 2000, friction: 200 };
 
 const ImgGallery = () => {
   // const size = useWindowSize();
+
   const size = {
     width: window.innerWidth,
     height: window.innerHeight,
@@ -34,8 +35,7 @@ const ImgGallery = () => {
 
   useLayoutEffect(() => {
     if (sideRef.current) {
-      let boxWidth = 0;
-      
+      let boxWidth = 0;    
       // [...sideRef.current.children].forEach(c => {
       //   const childBox = c.getBoundingClientRect();
       //   boxWidth = boxWidth + childBox.width;
