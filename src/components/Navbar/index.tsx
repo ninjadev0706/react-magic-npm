@@ -23,7 +23,7 @@ export const Navbar = () => {
             <div className='about-nav-container'>
                 {
                     isMobile ?
-                        <a href="/" className={isNavHover ? 'about-nav-link navMobileHover' : 'about-nav-link'}
+                        <a className={isNavHover ? 'about-nav-link navMobileHover' : 'about-nav-link'}
                             onClick={hoverMouse}
                             onMouseLeave={leaveMouse}
                         >

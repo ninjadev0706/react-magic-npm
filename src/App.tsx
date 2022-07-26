@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { DataProvider, ThemeProvider } from './context';
-
 import { HomePage } from './pages/HomePage';
 
 import './index.scss';
