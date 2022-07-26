@@ -14,7 +14,7 @@ const config = { mass: 2, tension: 2000, friction: 200 };
 
 const ImgGallery = () => {
   const size = useWindowSize();
-  const sideRef = useRef(null);
+  const sideRef = useRef<any>(null);
   const controllerRef = useRef(null);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
