@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { Controller, Scene } from "react-scrollmagic";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,25 +28,6 @@ const ImgGallery = () => {
     from: { opacity: 0, x: 20, height: 0 }
   });
 
-  useLayoutEffect(() => {
-    if (sideRef.current) {
-      let boxWidth = 100;
-
-      // [...sideRef.current.children].forEach(c => {
-      //   const childBox = c.getBoundingClientRect();
-      //   boxWidth = boxWidth + childBox.width;
-      // });
-
-      const w =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-
-      const totalScrollWidth = boxWidth > w ? boxWidth - w : 0;
-
-      setScrollWidth(totalScrollWidth);
-    }
-  }, [size.height, size.width]);
 
   return (
     <ParallaxProvider>
