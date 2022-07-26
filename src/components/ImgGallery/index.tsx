@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useLayoutEffect } from "react";
 import ReactDOM from "react-dom";
 import { Controller, Scene } from "react-scrollmagic";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -14,7 +14,7 @@ const config = { mass: 2, tension: 2000, friction: 200 };
 
 const ImgGallery = () => {
   const size = useWindowSize();
-  const sideRef = useRef<never>(null);
+  const sideRef = useRef(null);
   const controllerRef = useRef(null);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -28,14 +28,14 @@ const ImgGallery = () => {
     from: { opacity: 0, x: 20, height: 0 }
   });
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (sideRef.current) {
-      let boxWidth = 0;
+      let boxWidth = 100;
 
-      [...sideRef.current.children].forEach(c => {
-        const childBox = c.getBoundingClientRect();
-        boxWidth = boxWidth + childBox.width;
-      });
+      // [...sideRef.current.children].forEach(c => {
+      //   const childBox = c.getBoundingClientRect();
+      //   boxWidth = boxWidth + childBox.width;
+      // });
 
       const w =
         window.innerWidth ||
